@@ -1,0 +1,108 @@
+{
+  "name": "Account",
+  "plural": "accounts",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "strictObjectIDCoercion": true
+  },
+  "properties": {
+    "firstname": {
+      "type": "string",
+      "required": true
+    },
+    "lastname": {
+      "type": "string",
+      "required": true
+    },
+    "birthday": {
+      "type": "date",
+      "required": true
+    },
+    "type": {
+      "type": "number",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "events": {
+      "type": "hasMany",
+      "model": "Event",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "tickets": {
+      "type": "hasMany",
+      "model": "Ticket",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "requests": {
+      "type": "hasMany",
+      "model": "Request",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "lives": {
+      "type": "hasMany",
+      "model": "Live",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "photos": {
+      "type": "hasMany",
+      "model": "Photo",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "musics": {
+      "type": "hasAndBelongsToMany",
+      "model": "Music",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "playlists": {
+      "type": "hasMany",
+      "model": "Playlist",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "albums": {
+      "type": "hasMany",
+      "model": "Album",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "comments": {
+      "type": "hasMany",
+      "model": "Comment",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

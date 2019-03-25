@@ -1,0 +1,71 @@
+{
+  "name": "Music",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "mark": {
+      "type": "number",
+      "required": true
+    },
+    "location": {
+      "type": "string",
+      "required": true
+    },
+    "releaseDate": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "reports": {
+      "type": "hasMany",
+      "model": "Report",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "accounts": {
+      "type": "hasAndBelongsToMany",
+      "model": "Account",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "album": {
+      "type": "belongsTo",
+      "model": "Album",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "comments": {
+      "type": "hasMany",
+      "model": "Comment",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "playlists": {
+      "type": "hasAndBelongsToMany",
+      "model": "Playlist",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

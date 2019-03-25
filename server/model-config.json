@@ -1,0 +1,83 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "mysql",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "mysql",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "mysql",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "mysql",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "mysql",
+    "public": false
+  },
+  "Account": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "Ticket": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "Event": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "Comment": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "Album": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "Request": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "Live": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "Photo": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "Report": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "Music": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "Playlist": {
+    "dataSource": "mysql",
+    "public": true
+  }
+}
