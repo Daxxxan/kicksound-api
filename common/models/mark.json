@@ -1,25 +1,21 @@
 {
-  "name": "Live",
-  "base": "Disable",
+  "name": "Mark",
+  "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "location": {
-      "type": "string",
-      "required": true
-    },
-    "creationDate": {
-      "type": "date",
+    "value": {
+      "type": "number",
       "required": true
     }
   },
   "validations": [],
   "relations": {
-    "account": {
+    "music": {
       "type": "belongsTo",
-      "model": "Account",
+      "model": "Music",
       "foreignKey": "",
       "options": {
         "nestRemoting": true

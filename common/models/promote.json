@@ -1,26 +1,25 @@
 {
-  "name": "Live",
+  "name": "Promote",
   "base": "Disable",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
-  "properties": {
-    "location": {
-      "type": "string",
-      "required": true
-    },
-    "creationDate": {
-      "type": "date",
-      "required": true
-    }
-  },
+  "properties": {},
   "validations": [],
   "relations": {
     "account": {
       "type": "belongsTo",
       "model": "Account",
-      "foreignKey": "",
+      "foreignKey": "accountId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "music": {
+      "type": "belongsTo",
+      "model": "Music",
+      "foreignKey": "musicId",
       "options": {
         "nestRemoting": true
       }

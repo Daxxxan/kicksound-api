@@ -18,7 +18,10 @@ module.exports = function enableAuthentication(server) {
     'Album',
     'Comment',
     'PlaylistMusic',
-    'MusicAccount',
+    'Subscribe',
+    'Highlight',
+    'Promote',
+    'Mark',
   ];
 
   ds.setMaxListeners(Infinity);

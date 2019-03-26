@@ -1,6 +1,6 @@
 {
   "name": "Music",
-  "base": "PersistedModel",
+  "base": "Disable",
   "idInjection": true,
   "options": {
     "validateUpsert": true
@@ -8,10 +8,6 @@
   "properties": {
     "title": {
       "type": "string",
-      "required": true
-    },
-    "mark": {
-      "type": "number",
       "required": true
     },
     "location": {
@@ -28,14 +24,6 @@
     "reports": {
       "type": "hasMany",
       "model": "Report",
-      "foreignKey": "",
-      "options": {
-        "nestRemoting": true
-      }
-    },
-    "accounts": {
-      "type": "hasAndBelongsToMany",
-      "model": "Account",
       "foreignKey": "",
       "options": {
         "nestRemoting": true
@@ -60,6 +48,23 @@
     "playlists": {
       "type": "hasAndBelongsToMany",
       "model": "Playlist",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "accounts": {
+      "type": "hasMany",
+      "model": "Account",
+      "foreignKey": "musicId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "Promote"
+    },
+    "marks": {
+      "type": "hasMany",
+      "model": "Mark",
       "foreignKey": "",
       "options": {
         "nestRemoting": true

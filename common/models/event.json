@@ -1,6 +1,6 @@
 {
   "name": "Event",
-  "base": "PersistedModel",
+  "base": "Disable",
   "idInjection": true,
   "options": {
     "validateUpsert": true

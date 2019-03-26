@@ -70,14 +70,6 @@
         "nestRemoting": true
       }
     },
-    "musics": {
-      "type": "hasAndBelongsToMany",
-      "model": "Music",
-      "foreignKey": "",
-      "options": {
-        "nestRemoting": true
-      }
-    },
     "playlists": {
       "type": "hasMany",
       "model": "Playlist",
@@ -101,6 +93,51 @@
       "options": {
         "nestRemoting": true
       }
+    },
+    "musics": {
+      "type": "hasMany",
+      "model": "Music",
+      "foreignKey": "accountId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "Promote"
+    },
+    "firstSubscribeAccount": {
+      "type": "hasMany",
+      "model": "Account",
+      "foreignKey": "firstSubscribeAccountId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "Subscribe"
+    },
+    "secondSubscribeAccount": {
+      "type": "hasMany",
+      "model": "Account",
+      "foreignKey": "secondSubscribeAccountId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "Subscribe"
+    },
+    "firstHighlightAccount": {
+      "type": "hasMany",
+      "model": "Account",
+      "foreignKey": "firstHighlightAccountId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "Subscribe"
+    },
+    "secondHighlightAccount": {
+      "type": "hasMany",
+      "model": "Account",
+      "foreignKey": "secondHighlightAccountId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "Subscribe"
     }
   },
   "acls": [],

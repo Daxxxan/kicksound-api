@@ -1,6 +1,6 @@
 {
   "name": "Album",
-  "base": "PersistedModel",
+  "base": "Disable",
   "idInjection": true,
   "options": {
     "validateUpsert": true
@@ -11,7 +11,7 @@
       "required": true
     },
     "photo": {
-      "type": "string"
+      "type": "number"
     },
     "releaseDate": {
       "type": "date",

@@ -79,5 +79,25 @@
   "Playlist": {
     "dataSource": "mysql",
     "public": true
+  },
+  "Promote": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "Disable": {
+    "dataSource": "mysql",
+    "public": false
+  },
+  "Highlight": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "Subscribe": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "Mark": {
+    "dataSource": "mysql",
+    "public": true
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "Comment",
-  "base": "PersistedModel",
+  "base": "Disable",
   "idInjection": true,
   "options": {
     "validateUpsert": true
