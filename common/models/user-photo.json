@@ -1,20 +1,11 @@
 {
-  "name": "Album",
+  "name": "UserPhoto",
   "base": "Disable",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
-  "properties": {
-    "title": {
-      "type": "string",
-      "required": true
-    },
-    "releaseDate": {
-      "type": "date",
-      "required": true
-    }
-  },
+  "properties": {},
   "validations": [],
   "relations": {
     "account": {
@@ -25,16 +16,8 @@
         "nestRemoting": true
       }
     },
-    "music": {
-      "type": "hasMany",
-      "model": "Music",
-      "foreignKey": "",
-      "options": {
-        "nestRemoting": true
-      }
-    },
-    "photos": {
-      "type": "hasMany",
+    "photo": {
+      "type": "belongsTo",
       "model": "Photo",
       "foreignKey": "",
       "options": {

@@ -65,7 +65,7 @@
     "public": true
   },
   "Photo": {
-    "dataSource": "mysql",
+    "dataSource": "photoStorage",
     "public": true
   },
   "Report": {
@@ -97,6 +97,10 @@
     "public": true
   },
   "Mark": {
+    "dataSource": "mysql",
+    "public": true
+  },
+  "UserPhoto": {
     "dataSource": "mysql",
     "public": true
   }

@@ -107,36 +107,24 @@
       "type": "hasMany",
       "model": "Account",
       "foreignKey": "firstSubscribeAccountId",
-      "options": {
-        "nestRemoting": true
-      },
       "through": "Subscribe"
     },
     "secondSubscribeAccount": {
       "type": "hasMany",
       "model": "Account",
       "foreignKey": "secondSubscribeAccountId",
-      "options": {
-        "nestRemoting": true
-      },
       "through": "Subscribe"
     },
     "firstHighlightAccount": {
       "type": "hasMany",
       "model": "Account",
       "foreignKey": "firstHighlightAccountId",
-      "options": {
-        "nestRemoting": true
-      },
       "through": "Subscribe"
     },
     "secondHighlightAccount": {
       "type": "hasMany",
       "model": "Account",
       "foreignKey": "secondHighlightAccountId",
-      "options": {
-        "nestRemoting": true
-      },
       "through": "Subscribe"
     }
   },
