@@ -103,5 +103,9 @@
   "UserPhoto": {
     "dataSource": "mysql",
     "public": true
+  },
+  "AlbumPhoto": {
+    "dataSource": "mysql",
+    "public": true
   }
 }
