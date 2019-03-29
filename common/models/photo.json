@@ -1,27 +1,9 @@
 {
   "name": "Photo",
-  "base": "Disable",
-  "idInjection": true,
-  "options": {
-    "validateUpsert": true
-  },
-  "properties": {
-    "location": {
-      "type": "string",
-      "required": true
-    }
-  },
+  "base": "Model",
+  "properties": {},
   "validations": [],
-  "relations": {
-    "account": {
-      "type": "belongsTo",
-      "model": "Account",
-      "foreignKey": "",
-      "options": {
-        "nestRemoting": true
-      }
-    }
-  },
+  "relations": {},
   "acls": [],
   "methods": {}
 }

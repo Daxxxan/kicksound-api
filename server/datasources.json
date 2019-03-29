@@ -12,5 +12,13 @@
     "name": "mysql",
     "user": "root",
     "connector": "mysql"
+  },
+  "photoStorage": {
+    "name": "photoStorage",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "./server/storage",
+    "maxFileSize": "16777216",
+    "nameConflic": "makeUnique"
   }
 }
