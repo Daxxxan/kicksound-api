@@ -1,0 +1,23 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:5.7
+    ports: 
+      - "3306:3306"
+    environment:
+      - MYSQL_DATABASE=kicksound
+      - MYSQL_ROOT_PASSWORD=123456
+    volumes:
+      - mysql:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    links: 
+      - mysql
+    ports:
+      - 8081:80
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+      - PMA_HOST=mysql
+volumes: 
+  mysql:
