@@ -19,7 +19,7 @@
   },
   "AccessToken": {
     "dataSource": "mysql",
-    "public": false
+    "public": true
   },
   "ACL": {
     "dataSource": "mysql",
