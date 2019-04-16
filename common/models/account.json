@@ -18,7 +18,8 @@
     },
     "type": {
       "type": "number",
-      "required": true
+      "required": true,
+      "default" : 0
     },
     "description": {
       "type": "string"
