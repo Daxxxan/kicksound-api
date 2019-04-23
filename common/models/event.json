@@ -10,9 +10,6 @@
       "type": "string",
       "required": true
     },
-    "photo": {
-      "type": "string"
-    },
     "description": {
       "type": "string",
       "required": true
@@ -27,6 +24,14 @@
     "account": {
       "type": "belongsTo",
       "model": "Account",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "photos": {
+      "type": "hasMany",
+      "model": "Photo",
       "foreignKey": "",
       "options": {
         "nestRemoting": true
