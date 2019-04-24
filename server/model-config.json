@@ -99,13 +99,5 @@
   "Mark": {
     "dataSource": "mysql",
     "public": true
-  },
-  "UserPhoto": {
-    "dataSource": "mysql",
-    "public": true
-  },
-  "AlbumPhoto": {
-    "dataSource": "mysql",
-    "public": true
   }
 }

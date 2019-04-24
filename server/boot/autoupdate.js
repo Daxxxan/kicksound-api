@@ -11,8 +11,6 @@ module.exports = function enableAuthentication(server) {
     'Ticket',
     'Request',
     'Live',
-    'UserPhoto',
-    'AlbumPhoto',
     'Report',
     'Music',
     'Playlist',
