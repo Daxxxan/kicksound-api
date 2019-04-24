@@ -9,12 +9,10 @@
   },
   "properties": {
     "firstname": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "lastname": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "type": {
       "type": "number",
