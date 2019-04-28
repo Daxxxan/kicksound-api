@@ -17,6 +17,9 @@
     "ticketsNumber": {
       "type": "number",
       "required": true
+    },
+    "picture": {
+      "type": "string"
     }
   },
   "validations": [],

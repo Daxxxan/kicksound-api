@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "start": "node .",
     "posttest": "npm run lint",
-    "serve" : "nodemon ."
+    "serve": "nodemon ."
   },
   "dependencies": {
     "compression": "^1.0.3",
