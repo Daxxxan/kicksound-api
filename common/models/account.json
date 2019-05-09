@@ -21,6 +21,9 @@
     },
     "description": {
       "type": "string"
+    },
+    "picture": {
+      "type": "string"
     }
   },
   "validations": [],
@@ -126,7 +129,7 @@
   "acls": [
     {
       "principalType": "ROLE",
-      "principalId": "$owner",
+      "principalId": "$authenticated",
       "permission": "ALLOW"
     },
     {
