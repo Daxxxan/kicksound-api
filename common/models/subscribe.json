@@ -8,18 +8,18 @@
   "properties": {},
   "validations": [],
   "relations": {
-    "firstAccount": {
+    "follower": {
       "type": "belongsTo",
       "model": "Account",
-      "foreignKey": "firstSubscribeAccountId",
+      "foreignKey": "followerId",
       "options": {
         "nestRemoting": true
       }
     },
-    "secondAccount": {
+    "followee": {
       "type": "belongsTo",
       "model": "Account",
-      "foreignKey": "secondSubscribeAccountId",
+      "foreignKey": "followeeId",
       "options": {
         "nestRemoting": true
       }

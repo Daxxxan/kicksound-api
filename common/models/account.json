@@ -101,16 +101,24 @@
       },
       "through": "Promote"
     },
-    "firstSubscribeAccount": {
+    "followers": {
       "type": "hasMany",
       "model": "Account",
-      "foreignKey": "firstSubscribeAccountId",
+      "foreignKey": "followeeId",
+      "keyThrough": "followerId",
+      "options": {
+        "nestRemoting": true
+      },
       "through": "Subscribe"
     },
-    "secondSubscribeAccount": {
+    "following": {
       "type": "hasMany",
       "model": "Account",
-      "foreignKey": "secondSubscribeAccountId",
+      "foreignKey": "followerId",
+      "keyThrough": "followeeId",
+      "options": {
+        "nestRemoting": true
+      },
       "through": "Subscribe"
     },
     "firstHighlightAccount": {
