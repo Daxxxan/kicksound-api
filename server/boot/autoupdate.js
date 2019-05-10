@@ -26,7 +26,7 @@ module.exports = function enableAuthentication(server) {
   ds.setMaxListeners(Infinity);
 
   ds.autoupdate(models, function(err) {
-    if (err) throw err;
-    console.log('Tables [' + models + '] created in ', ds.adapter.name);
+	if (err) throw err;
+	console.log('Tables [' + models + '] created in ', ds.adapter.name);
   });
 };
