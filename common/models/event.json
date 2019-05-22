@@ -23,10 +23,6 @@
     },
     "date": {
       "type": "date"
-    },
-    "visible": {
-      "type": "Boolean",
-      "default": 1
     }
   },
   "validations": [],
