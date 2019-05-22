@@ -25,7 +25,8 @@
       "type": "date"
     },
     "visible": {
-      "type": "Boolean"
+      "type": "Boolean",
+      "default": 1
     }
   },
   "validations": [],
