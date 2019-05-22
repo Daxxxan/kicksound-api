@@ -20,6 +20,12 @@
     },
     "picture": {
       "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "visible": {
+      "type": "Boolean"
     }
   },
   "validations": [],
