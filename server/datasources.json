@@ -11,7 +11,8 @@
     "password": "password",
     "name": "mysql",
     "user": "root",
-    "connector": "mysql"
+    "connector": "mysql",
+    "timezone": "UTC+02:00"
   },
   "photoStorage": {
     "name": "photoStorage",
