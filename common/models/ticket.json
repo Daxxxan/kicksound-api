@@ -20,6 +20,14 @@
       "options": {
         "nestRemoting": true
       }
+    },
+    "event": {
+      "type": "belongsTo",
+      "model": "Event",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
     }
   },
   "acls": [],

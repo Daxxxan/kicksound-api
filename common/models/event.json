@@ -42,6 +42,14 @@
       "options": {
         "nestRemoting": true
       }
+    },
+    "tickets": {
+      "type": "hasMany",
+      "model": "Ticket",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
     }
   },
   "acls": [],
