@@ -15,7 +15,7 @@ module.exports = function(Event) {
   Event.remoteMethod('getEventParticipants', {
     accepts: {arg: 'id', type: 'number', http: {source: 'path'},
       required: true, description: 'Event ID'},
-    returns: {arg: 'Accounts', type: 'string'},
+    returns: {type: 'array', root: 'true'},
     http: {path: '/:id/participants', verb: 'get'},
     description: 'Get all event\'s accounts',
   });
