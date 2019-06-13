@@ -1,5 +1,6 @@
 'use strict';
 
+/* Get all event's participants */
 module.exports = function(Event) {
   Event.getEventParticipants = function(id, cb) {
     Event.findById(id, {include: {tickets: 'account'}},
