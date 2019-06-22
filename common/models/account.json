@@ -92,7 +92,15 @@
         "nestRemoting": true
       }
     },
-    "musics": {
+    "artistMusic": {
+      "type": "hasMany",
+      "model": "Music",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "musicsPromoted": {
       "type": "hasMany",
       "model": "Music",
       "foreignKey": "accountId",

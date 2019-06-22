@@ -53,7 +53,7 @@
         "nestRemoting": true
       }
     },
-    "accounts": {
+    "accountsPromote": {
       "type": "hasMany",
       "model": "Account",
       "foreignKey": "musicId",
@@ -61,6 +61,14 @@
         "nestRemoting": true
       },
       "through": "Promote"
+    },
+    "account": {
+      "type": "belongsTo",
+      "model": "Account",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
     },
     "marks": {
       "type": "hasMany",

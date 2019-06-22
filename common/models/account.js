@@ -40,23 +40,4 @@ module.exports = function(Account) {
     http: {path: '/:id/eventByFollowedUser', verb: 'get'},
     description: 'Get all events by followed users',
   });
-
-  Account.getMusicByArtist = function(id, cb) {
-    Account.findById(id, {include: {musics: ['accounts']}},
-      function(err, instance) {
-        let result = [];
-        for (let i = 0; i < instance.musics().length; i++) {
-          result.push(instance.musics()[i]);
-        }
-        cb(null, result);
-      });
-  };
-
-  Account.remoteMethod('getMusicByArtist', {
-    accepts: {arg: 'id', type: 'number', http: {source: 'path'},
-      required: true, description: 'User ID'},
-    returns: {type: 'array', root: 'true'},
-    http: {path: '/:id/musicByArtist', verb: 'get'},
-    description: 'Get all musics of an artist',
-  });
 };
