@@ -109,6 +109,15 @@
       },
       "through": "Promote"
     },
+    "favoriteMusics": {
+      "type": "hasMany",
+      "model": "Music",
+      "foreignKey": "accountId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "favorite"
+    },
     "followers": {
       "type": "hasMany",
       "model": "Account",

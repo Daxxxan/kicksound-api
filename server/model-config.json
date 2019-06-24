@@ -99,5 +99,9 @@
   "Mark": {
     "dataSource": "mysql",
     "public": true
+  },
+  "favorite": {
+    "dataSource": "mysql",
+    "public": true
   }
 }

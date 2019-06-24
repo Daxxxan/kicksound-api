@@ -62,6 +62,15 @@
       },
       "through": "Promote"
     },
+    "accountWhoLike": {
+      "type": "hasMany",
+      "model": "Account",
+      "foreignKey": "musicId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "favorite"
+    },
     "account": {
       "type": "belongsTo",
       "model": "Account",

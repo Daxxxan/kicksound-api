@@ -2,7 +2,8 @@
 
 module.exports = function(Music) {
   Music.getMusicByArtist = function(id, cb) {
-    Music.find({where: {accountId: id}, include: 'account'},
+    Music.find({where: {accountId: id}, include: ['account',
+      'accountWhoLike']},
       function(err, instance) {
         cb(null, instance);
       });
