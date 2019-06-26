@@ -41,7 +41,7 @@ module.exports = function(Account) {
     description: 'Get all events by followed users',
   });
 
-  Account.getFavoriteMusicsAndOwner = function(id, cb) {
+  Account.getFavoriteMusicsAndOwner = function(id, loggedUser, cb) {
     Account.findById(id, {include: {
       relation: 'favoriteMusics',
       scope: {
@@ -53,6 +53,13 @@ module.exports = function(Account) {
         let result = [];
         instance = instance.toJSON();
         for (let i = 0; i < instance.favoriteMusics.length; i++) {
+          for (let j = 0; j < instance.favoriteMusics[i].accountWhoLike.length;
+               j++) {
+            if (instance.favoriteMusics[i].accountWhoLike[j].id !==
+              loggedUser) {
+              instance.favoriteMusics[i].accountWhoLike.splice(j, 1);
+            }
+          }
           result.push(instance.favoriteMusics[i]);
         }
         cb(null, result);
@@ -60,10 +67,14 @@ module.exports = function(Account) {
   };
 
   Account.remoteMethod('getFavoriteMusicsAndOwner', {
-    accepts: {arg: 'id', type: 'number', http: {source: 'path'},
-      required: true, description: 'User ID'},
+    accepts: [
+      {arg: 'id', type: 'number', http: {source: 'path'},
+        required: true, description: 'User ID'},
+      {arg: 'loggedUser', type: 'number', http: {source: 'path'},
+        required: true, description: 'User ID'},
+    ],
     returns: {type: 'array', root: 'true'},
-    http: {path: '/:id/favoriteMusicsAndOwner', verb: 'get'},
+    http: {path: '/:id/favoriteMusicsAndOwner/:loggedUser', verb: 'get'},
     description: 'Get all user\'s favorites musics',
   });
 };
