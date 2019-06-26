@@ -40,4 +40,30 @@ module.exports = function(Account) {
     http: {path: '/:id/eventByFollowedUser', verb: 'get'},
     description: 'Get all events by followed users',
   });
+
+  Account.getFavoriteMusicsAndOwner = function(id, cb) {
+    Account.findById(id, {include: {
+      relation: 'favoriteMusics',
+      scope: {
+        include: ['account', 'accountWhoLike'],
+      },
+    },
+    },
+      function(err, instance) {
+        let result = [];
+        instance = instance.toJSON();
+        for (let i = 0; i < instance.favoriteMusics.length; i++) {
+          result.push(instance.favoriteMusics[i]);
+        }
+        cb(null, result);
+      });
+  };
+
+  Account.remoteMethod('getFavoriteMusicsAndOwner', {
+    accepts: {arg: 'id', type: 'number', http: {source: 'path'},
+      required: true, description: 'User ID'},
+    returns: {type: 'array', root: 'true'},
+    http: {path: '/:id/favoriteMusicsAndOwner', verb: 'get'},
+    description: 'Get all user\'s favorites musics',
+  });
 };
