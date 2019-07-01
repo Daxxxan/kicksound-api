@@ -45,14 +45,28 @@ module.exports = function(Account) {
     Account.findById(id, {include: {
       relation: 'favoriteMusics',
       scope: {
-        include: ['account', 'accountWhoLike'],
+        include: ['account', 'accountWhoLike', 'marks'],
       },
     },
     },
       function(err, instance) {
         let result = [];
+        let markAverage;
+
         instance = instance.toJSON();
+
         for (let i = 0; i < instance.favoriteMusics.length; i++) {
+          markAverage = 0;
+          for (let k = 0; k < instance.favoriteMusics[i].marks.length; k++) {
+            markAverage += instance.favoriteMusics[i].marks[k].value;
+          }
+          if (instance.favoriteMusics[i].marks.length !== 0) {
+            instance.favoriteMusics[i].mark =
+              markAverage / instance.favoriteMusics[i].marks.length;
+          } else {
+            instance.favoriteMusics[i].mark = markAverage;
+          }
+
           for (let j = 0; j < instance.favoriteMusics[i].accountWhoLike.length;
                j++) {
             if (instance.favoriteMusics[i].accountWhoLike[j].id !==
