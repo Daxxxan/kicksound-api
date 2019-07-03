@@ -14,12 +14,11 @@
     "connector": "mysql",
     "timezone": "UTC+02:00"
   },
-  "photoStorage": {
-    "name": "photoStorage",
+  "storage": {
+    "name": "storage",
     "connector": "loopback-component-storage",
-    "provider": "filesystem",
-    "root": "./server/storage",
-    "maxFileSize": "16777216",
-    "nameConflic": "makeUnique"
+    "provider": "amazon",
+    "key": "gVdWOw+FmcBMjEqcvVG2/Cav0WhzajlhP2rYVzMP",
+    "keyId": "AKIAQ3BUWBLDHYEDO47B"
   }
 }

@@ -65,7 +65,7 @@
     "public": true
   },
   "Photo": {
-    "dataSource": "photoStorage",
+    "dataSource": "storage",
     "public": true
   },
   "Report": {
