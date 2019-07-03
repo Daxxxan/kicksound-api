@@ -17,8 +17,9 @@
   "storage": {
     "name": "storage",
     "connector": "loopback-component-storage",
-    "provider": "amazon",
-    "key": "gVdWOw+FmcBMjEqcvVG2/Cav0WhzajlhP2rYVzMP",
-    "keyId": "AKIAQ3BUWBLDHYEDO47B"
+    "provider": "filesystem",
+    "root": "./server/storage",
+    "maxFileSize": "16777216",
+    "nameConflic": "makeUnique"
   }
 }
