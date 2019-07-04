@@ -103,5 +103,9 @@
   "favorite": {
     "dataSource": "mysql",
     "public": true
+  },
+  "musicKind": {
+    "dataSource": "mysql",
+    "public": true
   }
 }

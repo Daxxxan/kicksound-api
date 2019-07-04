@@ -22,6 +22,7 @@ module.exports = function enableAuthentication(server) {
     'Promote',
     'Mark',
     'favorite',
+    'musicKind',
   ];
 
   ds.setMaxListeners(Infinity);
