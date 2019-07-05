@@ -11,7 +11,7 @@
     "firstAccount": {
       "type": "belongsTo",
       "model": "Account",
-      "foreignKey": "firstHighlightAccountId",
+      "foreignKey": "highlightId",
       "options": {
         "nestRemoting": true
       }
@@ -19,7 +19,7 @@
     "secondAccount": {
       "type": "belongsTo",
       "model": "Account",
-      "foreignKey": "secondHighlightAccountId",
+      "foreignKey": "highlightedId",
       "options": {
         "nestRemoting": true
       }

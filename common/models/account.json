@@ -138,17 +138,25 @@
       },
       "through": "Subscribe"
     },
-    "firstHighlightAccount": {
+    "highlight": {
       "type": "hasMany",
       "model": "Account",
-      "foreignKey": "firstHighlightAccountId",
-      "through": "Subscribe"
+      "foreignKey": "highlightId",
+      "keyThrough": "highlightedId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "Highlight"
     },
-    "secondHighlightAccount": {
+    "highlighted": {
       "type": "hasMany",
       "model": "Account",
-      "foreignKey": "secondHighlightAccountId",
-      "through": "Subscribe"
+      "foreignKey": "highlightedId",
+      "keyThrough": "highlightId",
+      "options": {
+        "nestRemoting": true
+      },
+      "through": "Highlight"
     }
   },
   "acls": [
