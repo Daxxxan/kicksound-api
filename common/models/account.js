@@ -87,4 +87,36 @@ module.exports = function(Account) {
     http: {path: '/:id/favoriteMusicsAndOwner', verb: 'get'},
     description: 'Get all user\'s favorites musics',
   });
+
+  Account.getUnknownArtistsByArtistFollowed = function(id, cb) {
+    Account.findById(id, {include: {
+      relation: 'following',
+      scope: {
+        include: 'highlight',
+      },
+    },
+    },
+      function(err, instance) {
+        let result = [];
+
+        instance = instance.toJSON();
+
+        for (let i = 0; i < instance.following.length; i++) {
+          if(instance.following[i].type === 2) {
+            for(let j = 0; j < instance.following[i].highlight.length; j++) {
+              result.push(instance.following[i].highlight[j]);
+            }
+          }
+        }
+        cb(null, result);
+      });
+  };
+
+  Account.remoteMethod('getUnknownArtistsByArtistFollowed', {
+    accepts: {arg: 'id', type: 'number', http: {source: 'path'},
+      required: true, description: 'User ID'},
+    returns: {type: 'array', root: 'true'},
+    http: {path: '/:id/unknownArtistsByArtistFollowed', verb: 'get'},
+    description: 'Get all the unknown arstis that are highlight by artist',
+  });
 };
