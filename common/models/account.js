@@ -103,7 +103,8 @@ module.exports = function(Account) {
 
         for (let i = 0; i < instance.following.length; i++) {
           if (instance.following[i].type === 2) {
-            if (instance.following[i].highlight !== null) {
+            console.log(instance.following[i].highlight);
+            if (instance.following[i].highlight !== undefined) {
               for (let j = 0; j < instance.following[i].highlight.length; j++) {
                 result.push(instance.following[i].highlight[j]);
               }
