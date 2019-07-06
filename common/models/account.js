@@ -117,6 +117,6 @@ module.exports = function(Account) {
       required: true, description: 'User ID'},
     returns: {type: 'array', root: 'true'},
     http: {path: '/:id/unknownArtistsByArtistFollowed', verb: 'get'},
-    description: 'Get all the unknown arstis that are highlight by artist',
+    description: 'Get all the unknown artists that are highlight by artist',
   });
 };
