@@ -86,6 +86,14 @@
       "options": {
         "nestRemoting": true
       }
+    },
+    "musicKind": {
+      "type": "belongsTo",
+      "model": "musicKind",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
     }
   },
   "acls": [],
