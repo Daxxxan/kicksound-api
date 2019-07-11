@@ -6,7 +6,7 @@ module.exports = function(Playlist) {
       include: {
         relation: 'musics',
         scope: {
-          include: ['account', 'accountWhoLike', 'marks'],
+          include: ['account', 'accountWhoLike', 'marks', 'musicKind'],
         },
       },
     },
