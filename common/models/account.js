@@ -165,12 +165,34 @@ module.exports = function(Account) {
         });
       });
     });
+
+    Model.find({
+      where: {
+        followeeId: ctx.where.id,
+      },
+    }, function(err, res) {
+      res.forEach(function(model) {
+        Model.destroyById(model.id, function() {
+        });
+      });
+    });
   };
 
   Account.deleteHighlight = function(Model, ctx) {
     Model.find({
       where: {
         highlightId: ctx.where.id,
+      },
+    }, function(err, res) {
+      res.forEach(function(model) {
+        Model.destroyById(model.id, function() {
+        });
+      });
+    });
+
+    Model.find({
+      where: {
+        highlightedId: ctx.where.id,
       },
     }, function(err, res) {
       res.forEach(function(model) {
