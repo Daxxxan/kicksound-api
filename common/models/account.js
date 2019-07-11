@@ -121,4 +121,23 @@ module.exports = function(Account) {
     http: {path: '/:id/unknownArtistsByArtistFollowed', verb: 'get'},
     description: 'Get all the unknown artists that are highlight by artist',
   });
+
+  Account.rgpd = function(id, cb) {
+    Account.findById(id, {
+      include: ['events', 'tickets', 'playlists',
+        'albums', 'artistMusic', 'favoriteMusics',
+        'highlight', 'highlighted', 'followers', 'following'],
+    },
+      function(err, instance) {
+        cb(null, instance);
+      });
+  };
+
+  Account.remoteMethod('rgpd', {
+    accepts: {arg: 'id', type: 'number', http: {source: 'path'},
+      required: true, description: 'User ID'},
+    returns: {type: 'array', root: 'true'},
+    http: {path: '/:id/RGPD', verb: 'get'},
+    description: 'RGPD',
+  });
 };
