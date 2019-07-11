@@ -121,4 +121,82 @@ module.exports = function(Account) {
     http: {path: '/:id/unknownArtistsByArtistFollowed', verb: 'get'},
     description: 'Get all the unknown artists that are highlight by artist',
   });
+
+  Account.rgpd = function(id, cb) {
+    Account.findById(id, {
+      include: ['events', 'tickets', 'playlists',
+        'artistMusic', 'favoriteMusics',
+        'highlight', 'highlighted', 'followers', 'following'],
+    },
+      function(err, instance) {
+        cb(null, instance);
+      });
+  };
+
+  Account.remoteMethod('rgpd', {
+    accepts: {arg: 'id', type: 'number', http: {source: 'path'},
+      required: true, description: 'User ID'},
+    returns: {type: 'array', root: 'true'},
+    http: {path: '/:id/RGPD', verb: 'get'},
+    description: 'RGPD',
+  });
+
+  Account.deleteModel = function(Model, ctx) {
+    Model.find({
+      where: {
+        accountId: ctx.where.id,
+      },
+    }, function(err, res) {
+      res.forEach(function(model) {
+        Model.destroyById(model.id, function() {
+        });
+      });
+    });
+  };
+
+  Account.deleteSubscribe = function(Model, ctx) {
+    Model.find({
+      where: {
+        followerId: ctx.where.id,
+      },
+    }, function(err, res) {
+      res.forEach(function(model) {
+        Model.destroyById(model.id, function() {
+        });
+      });
+    });
+  };
+
+  Account.deleteHighlight = function(Model, ctx) {
+    Model.find({
+      where: {
+        highlightId: ctx.where.id,
+      },
+    }, function(err, res) {
+      res.forEach(function(model) {
+        Model.destroyById(model.id, function() {
+        });
+      });
+    });
+  };
+
+  Account.observe('before delete', function(ctx, next) {
+    let Event = ctx.Model.app.models.Event;
+    let Ticket = ctx.Model.app.models.Ticket;
+    let Playlist = ctx.Model.app.models.Playlist;
+    let Music = ctx.Model.app.models.Music;
+    let Favorite = ctx.Model.app.models.favorite;
+    let Highlight = ctx.Model.app.models.Highlight;
+    let Subscribe = ctx.Model.app.models.Subscribe;
+
+    Account.deleteModel(Event, ctx);
+    Account.deleteModel(Ticket, ctx);
+    Account.deleteModel(Playlist, ctx);
+    Account.deleteModel(Music, ctx);
+    Account.deleteModel(Favorite, ctx);
+    Account.deleteHighlight(Highlight, ctx);
+    Account.deleteSubscribe(Subscribe, ctx);
+
+    next();
+  });
 };
